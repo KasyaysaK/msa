@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Mon agence' %}
+
+{% block body %}
+	<div class="jumbotron text-center">
+		<div class="container">
+			<h1>Bienvenue!</h1>
+			<p>cecu est est un test</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<h2>Les derniers biens</h2>
+		<div class="row flex">
+			{% for property in properties %}
+				<div class="col-3">
+					<div class="card-body">
+						<h5 class="card-title">
+							<a href="{{ path('property.show', {id: property.id, slug: property.slug}) }}">{{ property.slug }}</a>
+						</h5>
+						<p class="card-text"> {{ property.city }} ({{ property.postalCode }})</p>
+						<div class="text-primary">{{ property.formattedPrice }} €</div>
+					</div>	
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}
