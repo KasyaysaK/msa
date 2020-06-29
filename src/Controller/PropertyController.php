@@ -8,7 +8,6 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class PropertyController extends AbstractController
 {
@@ -37,11 +36,11 @@ class PropertyController extends AbstractController
 
 
 	/**
-	 * @Route("/biens/{slug}-{id}", name="property.show", requirements={"slug": "[a-z0-9\-]*"})
+	 * @Route("/biens/{id}", name="property.show", requirements={"slug"= "[a-z0-9\-]*"})
 	 * @param Property $property
 	 * @return Response
 	 */
-	public function show(Property $property, string $slug): Response
+	public function show(Property $property, $id): Response
 	{	
 		return $this->render('property/show.html.twig', [
 				'property' => $property,
