@@ -2,6 +2,8 @@ home:
     path: /
     controller: App\Controller\HomeController::index
 
+logout:
+    path: /logout
 # property.show: 
 #     path: /biens/{slug}-{id}
 #     controller: App\Controller\PropertyController::index
