@@ -34,7 +34,7 @@ class Property
     private $title;
 
     /**
-    * @Assert\Length(min=5, max=255)
+     * @Assert\Length(min=5, max=255)
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
